@@ -1,4 +1,5 @@
 
+***
 
 # Development Process Log
 
@@ -44,9 +45,17 @@ I broke the monolithic problem into 4 distinct modules to separate concerns:
 ### Phase 4: Orchestration & Tests
 *   **Prompt 7 (Pipeline):** "Write `run_pipeline`. Iterate through articles, analyze, then validate. Print status updates using standard `print` (avoid external deps like tqdm)."
 *   **Prompt 8 (Reporting):** "Write `save_results`. Save raw JSON and generate a Markdown report with a Summary section (counting sentiments) and a Detailed Analysis section."
-*   **Prompt 9 (Unit Tests):** "Write `tests/test_analyzer.py` using `pytest` and `unittest.mock`. 1) Mock valid JSON response. 2) Test short text guard clause (ensure no API call). 3) Test API failure handling."
+*   **Prompt 9 (Analyzer Tests):** "Write `tests/test_analyzer.py` using `pytest` and `unittest.mock`. 1) Mock valid JSON response. 2) Test short text guard clause (ensure no API call). 3) Test API failure handling."
+*   **Prompt 10 (Fetcher Tests):** "Let's add `tests/test_fetcher.py`. I want to verify the `_normalize_article` logic specifically. Provide a mock raw article with title `[Removed]` -> Assert `None`. Provide a mock where `content` is `None` but `description` is valid -> Assert fallback. Provide a valid article -> Assert expected keys."
+*   **Prompt 11 (Validator Tests):** "Finally, let's write `tests/test_validator.py`. We need to verify that our 'Dual LLM' pipeline handles OpenRouter failures gracefully. Mock `requests.post` to raise a `timeout`. Assert that `validate_analysis` returns `None` instead of crashing. Mock valid JSON response from Mistral -> Assert `ValidationResult` with correct boolean."
 
 ## 4. Decisions & Trade-offs
 1.  **Pydantic vs. Raw Dicts:** I chose Pydantic because LLMs often output malformed JSON. Pydantic's `model_validate_json` provides a strict gatekeeper, ensuring the rest of the code never crashes due to missing keys.
 2.  **Over-fetching Strategy:** In `news_fetcher`, I requested `limit * 2` articles from the API. This ensures that after filtering out `[Removed]` or empty articles, the user still gets the requested number of results without needing a second API call.
 3.  **Lazy Loading:** Moving `genai.configure` to a lazy loader prevented global scope issues during testing and improved performance for batch processing.
+
+## 5. Testing Strategy
+I implemented a multi-layered `pytest` suite (8 tests total) to ensure system reliability:
+1.  **Analyzer Tests:** Verified Gemini integration and the 50-char guard clause using mocks to ensure zero-cost execution.
+2.  **Fetcher Tests:** Verified the data normalization logic, specifically ensuring that `[Removed]` titles are caught and the content-to-description fallback is reliable.
+3.  **Validator Tests:** Verified the "Dual LLM" safety net by mocking OpenRouter timeouts and malformed JSON responses.
