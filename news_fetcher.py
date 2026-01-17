@@ -58,7 +58,7 @@ def _normalize_article(article: Dict) -> Optional[Dict]:
     return {
         "title": title.strip(),
         "source": source_name,
-        "published_at": article.get("published_at"),
+        "published_at": article.get("publishedAt"),
         "url": article.get("url"),
         "text": text_payload.strip()
     }
