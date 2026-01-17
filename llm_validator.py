@@ -40,10 +40,11 @@ def validate_analysis(original_text: str, analysis: dict) -> ValidationResult | 
 
     url = "https://openrouter.ai/api/v1/chat/completions"
     
+    # --- PRO UPDATE: Identity Headers ---
     headers = {
         "Authorization": f"Bearer {api_key}",
-        "HTTP-Referer": "http://localhost:8000", # Required by OpenRouter
-        "X-Title": "Celltron Takehome",          # Required by OpenRouter
+        "HTTP-Referer": "https://github.com/ramdevmurali/celltron-news-analyzer", 
+        "X-Title": "Celltron News Analysis Pipeline",
         "Content-Type": "application/json"
     }
 
