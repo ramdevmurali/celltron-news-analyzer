@@ -1,6 +1,3 @@
-
-***
-
 # Development Process Log
 
 ## 1. Problem Understanding
@@ -16,6 +13,7 @@ I broke the monolithic problem into 4 distinct modules to separate concerns:
 2.  **Analyzer (`llm_analyzer.py`):** Encapsulates Gemini logic and Pydantic validation.
 3.  **Validator (`llm_validator.py`):** Independent module for OpenRouter interaction.
 4.  **Orchestrator (`main.py`):** Manages data flow and reporting.
+
 ### System Design & Data Flow
 The pipeline follows a linear, defensive architecture to ensure data integrity at each stage:
 
@@ -69,6 +67,11 @@ The pipeline follows a linear, defensive architecture to ensure data integrity a
 *   **Prompt 9 (Analyzer Tests):** "Write `tests/test_analyzer.py` using `pytest` and `unittest.mock`. 1) Mock valid JSON response. 2) Test short text guard clause (ensure no API call). 3) Test API failure handling."
 *   **Prompt 10 (Fetcher Tests):** "Let's add `tests/test_fetcher.py`. I want to verify the `_normalize_article` logic specifically. Provide a mock raw article with title `[Removed]` -> Assert `None`. Provide a mock where `content` is `None` but `description` is valid -> Assert fallback. Provide a valid article -> Assert expected keys."
 *   **Prompt 11 (Validator Tests):** "Finally, let's write `tests/test_validator.py`. We need to verify that our 'Dual LLM' pipeline handles OpenRouter failures gracefully. Mock `requests.post` to raise a `timeout`. Assert that `validate_analysis` returns `None` instead of crashing. Mock valid JSON response from Mistral -> Assert `ValidationResult` with correct boolean."
+
+### Phase 5: Refactoring & Compliance
+*   **Issue:** During final review, I realized I missed the PDF requirement to save `raw_articles.json` as a separate file. The initial `save_results` merged everything into `analysis_results.json`.
+*   **Refinement Prompt:** "Refactor `save_results` in `main.py`. Extract the raw article data from the results list and save it to `output/raw_articles.json` *before* saving the full analysis."
+*   **Result:** Compliance with Deliverables list (Page 2 of PDF).
 
 ## 4. Decisions & Trade-offs
 1.  **Pydantic vs. Raw Dicts:** I chose Pydantic because LLMs often output malformed JSON. Pydantic's `model_validate_json` provides a strict gatekeeper, ensuring the rest of the code never crashes due to missing keys.

@@ -81,23 +81,37 @@ def run_pipeline(topic: str, limit: int) -> List[Dict]:
 
 def save_results(results: List[Dict]):
     """
-    Saves analysis results to JSON and generates a Markdown report.
-    Calculates summary statistics dynamically.
+    Saves:
+    1. Raw articles to output/raw_articles.json (REQUIRED BY PDF)
+    2. Full analysis to output/analysis_results.json
+    3. Human-readable report to output/final_report.md
     """
     # Ensure output directory exists
     output_dir = Path("output")
     output_dir.mkdir(exist_ok=True)
 
-    # 1. Save Raw JSON (Machine Readable)
+    # --- CHANGE 1: Save Raw Articles Separately ---
+    raw_articles = [item["article"] for item in results]
+    raw_path = output_dir / "raw_articles.json"
+    try:
+        with open(raw_path, "w", encoding="utf-8") as f:
+            json.dump(raw_articles, f, indent=2, ensure_ascii=False)
+        print(f"💾 Raw articles saved to: {raw_path}")
+    except IOError as e:
+        print(f"❌ Error saving raw JSON: {e}")
+
+    # --- End CHANGE 1 ---
+
+    # 2. Save Analysis Results (Same as before)
     json_path = output_dir / "analysis_results.json"
     try:
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
-        print(f"💾 Raw results saved to: {json_path}")
+        print(f"💾 Analysis results saved to: {json_path}")
     except IOError as e:
-        print(f"❌ Error saving JSON: {e}")
+        print(f"❌ Error saving analysis JSON: {e}")
 
-    # 2. Generate Markdown Report (Human Readable)
+    # 3. Generate Markdown Report (Same as before)
     md_path = output_dir / "final_report.md"
     
     # Calculate Stats
@@ -128,7 +142,7 @@ def save_results(results: List[Dict]):
     for i, item in enumerate(results, 1):
         art = item["article"]
         anl = item["analysis"]
-        val = item["validation"] # May be None
+        val = item["validation"]
 
         lines.append(f"### Article {i}: \"{art['title']}\"")
         lines.append(f"- **Source:** {art['source']} ([Link]({art['url']}))")
@@ -136,7 +150,6 @@ def save_results(results: List[Dict]):
         lines.append(f"- **Tone:** {anl['tone']}")
         lines.append(f"- **LLM#1 Sentiment:** {anl['sentiment']} (Conf: {anl['confidence_score']})")
         
-        # Defensive display for Validation
         if val:
             icon = "✓" if val["is_valid"] else "⚠️"
             status = "Correct" if val["is_valid"] else "Flagged"
@@ -144,7 +157,7 @@ def save_results(results: List[Dict]):
         else:
             lines.append("- **LLM#2 Validation:** ❓ Skipped (Timeout/Error)")
             
-        lines.append("") # Spacer
+        lines.append("")
 
     try:
         with open(md_path, "w", encoding="utf-8") as f:
@@ -152,6 +165,7 @@ def save_results(results: List[Dict]):
         print(f"📄 Report generated at: {md_path}")
     except IOError as e:
         print(f"❌ Error saving Markdown: {e}")
+        # --- ADD THIS AT THE VERY BOTTOM ---
 
 if __name__ == "__main__":
     # Load environment variables
