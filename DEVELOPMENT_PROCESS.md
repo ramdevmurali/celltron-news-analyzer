@@ -79,15 +79,18 @@ def _create_retry_session() -> requests.Session:
 1. **Resilience:** Confirmed the `backoff_factor` provides exponential sleep (1s, 2s, 4s) rather than a fixed interval.
 2. **Safety:** The AI correctly included `allowed_methods`. I verified that only idempotent methods (GET/HEAD) are retried to prevent accidental duplicate data submissions.
 3. **Correctness:** The status codes (5xx) match the requirement for catching transient server issues.
-*   #### Task 2: Data Normalization
+Celltron Philosophy Active. 
+
+
+#### Task 2: Data Normalization
 **AI Prompt:**
 > "Write `_normalize_article(article: dict)`. Return `None` if title is '[Removed]'. Fallback to `description` if `content` is empty. Return a clean dict with specific keys."
 
-**AI Response:**
+**Final Refined Snippet:**
 ```python
 def _normalize_article(article: Dict) -> Optional[Dict]:
     title = article.get("title")
-    # Filter: Garbage or Removed content
+    # Filter: Garbage or Removed content (NewsAPI artifacts)
     if not title or title.strip() == "[Removed]":
         return None
 
@@ -96,21 +99,23 @@ def _normalize_article(article: Dict) -> Optional[Dict]:
     raw_desc = article.get("description")
     text_payload = raw_content if (raw_content and raw_content.strip()) else raw_desc
 
-    # Validation: If we still have no text, the article is useless
+    # Validation: If we still have no text, the article is useless for analysis
     if not text_payload or not text_payload.strip():
         return None
 
     return {
         "title": title.strip(),
         "source": article.get("source", {}).get("name", "Unknown"),
-        "text": text_payload.strip(),
-        # ... other fields
+        "published_at": article.get("publishedAt"), # Mapping camelCase from NewsAPI
+        "url": article.get("url"),
+        "text": text_payload.strip()
     }
 ```
+
 **My Review Check:**
-1. **Edge Case Handling:** Verified that the function handles `None` values for both `content` and `description` to prevent `AttributeError`.
-2. **Data Integrity:** Confirmed that `.strip()` is used on all text fields to ensure the LLM doesn't receive leading/trailing whitespace.
-3. **Filtering:** The logic correctly drops `[Removed]` artifacts, preventing wasted processing on deleted articles.
+1. **Ownership of Data Mapping:** The AI initially suggested `article.get("published_at")`. I audited the NewsAPI JSON response and caught that the field is actually `publishedAt` (camelCase). I manually corrected this to ensure the pipeline didn't return `None` for dates.
+2. **Defensive Logic:** Verified that the function handles cases where both `content` and `description` are `None` or empty strings, preventing the pipeline from processing "empty" news.
+3. **Data Integrity:** Ensured that `.strip()` is applied to the final payload, as LLM performance can be affected by unnecessary leading/trailing whitespace.
 #### Task 3: Main Logic (Orchestration)
 **AI Prompt:**
 > "Write `fetch_articles(topic, limit)`. Use the retry session. Add `timeout=10` to the `.get()` call. Loop through results and stop exactly when `limit` valid articles are found."
