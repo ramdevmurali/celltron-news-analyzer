@@ -16,6 +16,27 @@ I broke the monolithic problem into 4 distinct modules to separate concerns:
 2.  **Analyzer (`llm_analyzer.py`):** Encapsulates Gemini logic and Pydantic validation.
 3.  **Validator (`llm_validator.py`):** Independent module for OpenRouter interaction.
 4.  **Orchestrator (`main.py`):** Manages data flow and reporting.
+### System Design & Data Flow
+The pipeline follows a linear, defensive architecture to ensure data integrity at each stage:
+
+[ NewsAPI ] 
+    │
+    ▼
+[ news_fetcher.py ] ──► (Filter: [Removed] / Empty) ──► (Retry Logic)
+    │
+    ▼
+[ llm_analyzer.py ] ──► (Schema: Pydantic) ──► (Model: Gemini 2.5)
+    │
+    ▼
+[ llm_validator.py ] ──► (Audit: Mistral 7B) ──► (Verdict: is_valid)
+    │
+    ▼
+[ main.py ] ──────────► (JSON Storage) ──► (Markdown Report)
+
+**Design Rationale:**
+- **Decoupling:** Each module can be tested independently (as seen in `/tests`).
+- **Data Integrity:** The Pydantic layer in the Analyzer ensures that even if the LLM "hallucinates" the JSON structure, the system fails gracefully rather than passing corrupt data to the reporter.
+- **Verification:** The Dual-LLM approach (Validation Layer) ensures that the final output isn't just "AI generated," but "AI verified."
 
 ## 3. AI Prompts & Iterations
 
