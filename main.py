@@ -173,7 +173,7 @@ if __name__ == "__main__":
     
     # Run the pipeline
     # Topic is specific to the assignment requirement
-    final_data = run_pipeline("India Politics", limit=12)
+    final_data = run_pipeline('"Indian Government"', limit=12)
     
     # Save output only if we have data
     if final_data:

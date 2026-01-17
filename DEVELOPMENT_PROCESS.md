@@ -81,6 +81,13 @@ The pipeline follows a linear, defensive architecture to ensure data integrity a
 *   **Prompt 10 (Fetcher Tests):** "Let's add `tests/test_fetcher.py`. I want to verify the `_normalize_article` logic specifically. Provide a mock raw article with title `[Removed]` -> Assert `None`. Provide a mock where `content` is `None` but `description` is valid -> Assert fallback. Provide a valid article -> Assert expected keys."
 *   **Prompt 11 (Validator Tests):** "Finally, let's write `tests/test_validator.py`. We need to verify that our 'Dual LLM' pipeline handles OpenRouter failures gracefully. Mock `requests.post` to raise a `timeout`. Assert that `validate_analysis` returns `None` instead of crashing. Mock valid JSON response from Mistral -> Assert `ValidationResult` with correct boolean."
 
+### Phase 5: Refactoring & Quality Tuning (The "Senior" Polish)
+*   **Compliance Fix:** During final review, I realized the PDF required a separate `raw_articles.json` file.
+    *   *Action:* Refactored `save_results` to extract and save raw data before processing the analysis report.
+*   **Data Quality Iteration:** The initial search query "India Politics" returned irrelevant noise (e.g., generic Bollywood news or international mentions).
+    *   *Fix:* Updated the search query to `' "Indian Government" '` (nested quotes for exact phrase match) and increased the article limit to 12.
+    *   *Result:* Signal-to-noise ratio improved significantly; retrieved articles were strictly political.
+
 ## 4. Decisions & Trade-offs
 1.  **Pydantic vs. Raw Dicts:** I chose Pydantic because LLMs often output malformed JSON. Pydantic's `model_validate_json` provides a strict gatekeeper, ensuring the rest of the code never crashes due to missing keys.
 2.  **Over-fetching Strategy:** In `news_fetcher`, I requested `limit * 2` articles from the API. This ensures that after filtering out `[Removed]` or empty articles, the user still gets the requested number of results without needing a second API call.

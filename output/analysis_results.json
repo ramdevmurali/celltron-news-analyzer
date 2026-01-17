@@ -1,230 +1,230 @@
 [
   {
     "article": {
-      "title": "Mexican vloggers react to growing Indian presence in America, ‘Feels like we landed in India’",
-      "source": "Freerepublic.com",
-      "published_at": "2026-01-16T14:22:33Z",
-      "url": "https://freerepublic.com/focus/f-bloggers/4362431/posts",
-      "text": "Skip to comments.\r\nMexican vloggers react to growing Indian presence in America, Feels like we landed in IndiaMoney Control ^\r\n | 01 12 2026\r\n | Pathi Thadhagath\r\nPosted on 01/16/2026 6:22:33 AM PST … [+4421 chars]"
+      "title": "Jio boasts 5G, FWA and cloud traction as IPO looms",
+      "source": "TelecomTV",
+      "published_at": "2026-01-16T14:54:52Z",
+      "url": "https://www.telecomtv.com/content/5g/jio-boasts-5g-fwa-and-cloud-traction-as-ipo-looms-54668/",
+      "text": "With sales, profits and customer numbers rising, the stage is being set for the much anticipated initial public offering (IPO) of Jio Platforms, the digital division of giant Indian conglomerate Reli… [+2716 chars]"
     },
     "analysis": {
-      "gist": "Mexican vloggers are reacting to an increasing Indian population in America, with some expressing that parts of the country now feel like India.",
-      "sentiment": "Neutral",
-      "tone": "Observational",
-      "confidence_score": 0.8
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text as it correctly identifies the topic (Mexican vloggers reacting to an increasing Indian population in America) and the sentiment (neutral, as it does not express a positive or negative opinion about the situation). The tone is also correctly identified as observational, as it reflects the vloggers' observations about the situation."
-    }
-  },
-  {
-    "article": {
-      "title": "Under-19 World Cup: Amid off-field drama and political tensions, India and Bangladesh ready for a feisty fixture",
-      "source": "The Indian Express",
-      "published_at": "2026-01-16T14:09:52Z",
-      "url": "https://indianexpress.com/article/sports/cricket/u19-world-cup-india-vs-bangladesh-drama-political-tensions-10478052/",
-      "text": "The exuberant Bangladesh captain Azizul Hakim knows the many undercurrents of a game against India. “We have to play not just with our heads, but with our body language (too),” he told Daily Star bef… [+4454 chars]"
-    },
-    "analysis": {
-      "gist": "Bangladesh captain Azizul Hakim shared his strategic approach for an upcoming game against India, stressing the importance of body language in addition to mental play.",
-      "sentiment": "Neutral",
-      "tone": "Strategic",
-      "confidence_score": 0.9
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text by summarizing the captain's strategic approach for the game against India, emphasizing the importance of body language and mental play. The sentiment is neutral as it does not express any positive or negative emotions."
-    }
-  },
-  {
-    "article": {
-      "title": "As Climate Diplomacy Stalls, the Economics Are Racing Ahead",
-      "source": "Project Syndicate",
-      "published_at": "2026-01-16T13:34:17Z",
-      "url": "https://www.project-syndicate.org/commentary/climate-economics-markets-driving-transition-even-as-politicians-fail-by-julie-mccarthy-2026-01",
-      "text": "Despite political gridlock within countries and at global summits, climate change and ecological degradation are creating undeniable economic momentum. As renewables scale up, fossil fuels will becom… [+6991 chars]"
-    },
-    "analysis": {
-      "gist": "Despite political gridlock, climate change and ecological degradation are creating undeniable economic momentum, particularly as renewable energy scales up to displace fossil fuels.",
+      "gist": "Jio Platforms, the digital arm of Reliance, is poised for its much-anticipated initial public offering (IPO) following significant increases in sales, profits, and customer numbers.",
       "sentiment": "Positive",
       "tone": "Analytical",
-      "confidence_score": 0.9
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the sentiment and gist of the article text, stating that climate change and ecological degradation are creating economic momentum, particularly as renewable energy scales up to displace fossil fuels. The sentiment is positive as it highlights the economic benefits of renewable energy. The tone is analytical as it presents facts and analysis."
-    }
-  },
-  {
-    "article": {
-      "title": "Indian cinema’s defining moment",
-      "source": "BusinessLine",
-      "published_at": "2026-01-16T13:29:04Z",
-      "url": "https://www.thehindubusinessline.com/books/indian-cinemas-defining-moment/article70515095.ece",
-      "text": "If ever a destiny was fulfilled by being at the right place at the right time, it would certainly be Jagat Muraris. His is an incredible story of how he happened to be sponsored by the British India … [+4937 chars]"
-    },
-    "analysis": {
-      "gist": "The article introduces Jagat Muraris, whose destiny was fulfilled by being in the right place at the right time. It highlights his incredible story of being sponsored by British India.",
-      "sentiment": "Positive",
-      "tone": "Narrative",
-      "confidence_score": 0.9
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text by summarizing the main subject and event, and correctly identifying the sentiment as positive."
-    }
-  },
-  {
-    "article": {
-      "title": "Canada turns to China as Trump's tariffs and threats bring old foes together",
-      "source": "NBC News",
-      "published_at": "2026-01-16T12:33:35Z",
-      "url": "https://www.nbcnews.com/world/asia/canada-china-cut-tariffs-new-partnership-carney-xi-trump-threats-rcna253760",
-      "text": "BEIJING With U.S. tiesat their lowest point in modern history, Canada is turning to one of the only countries with which it had even worse relations: China.\r\nCanada is forging a new strategic partner… [+6653 chars]"
-    },
-    "analysis": {
-      "gist": "Canada is seeking a new strategic partnership with China, despite historically poor relations, as its ties with the U.S. are at a modern low point. This represents a significant pivot in Canadian foreign policy.",
-      "sentiment": "Neutral",
-      "tone": "Analytical",
-      "confidence_score": 0.9
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text by summarizing that Canada is seeking a new strategic partnership with China, which is a significant pivot in Canadian foreign policy, and this move is due to poor relations with the U.S. The sentiment is neutral as it is a factual summary of the article."
-    }
-  },
-  {
-    "article": {
-      "title": "‘Happy Patel’ X Review: Vir Das’ Directorial Debut With Aamir Khan Gets Mixed Response; Netizens Call It ‘Better Than Template Bollywood Comedies’",
-      "source": "LatestLY",
-      "published_at": "2026-01-16T11:30:29Z",
-      "url": "https://www.latestly.com/entertainment/bollywood/happy-patel-x-review-vir-das-directorial-debut-with-aamir-khan-gets-mixed-response-netizens-call-it-better-than-template-bollywood-comedies-7277883.html",
-      "text": "The highly anticipated spy comedy Happy Patel: Khatarnak Jasoos arrived in theatres today, January 16, 2026, marking a significant directorial debut for comedian Vir Das. Produced by Aamir Khan Produ… [+3915 chars]"
-    },
-    "analysis": {
-      "gist": "The spy comedy \"Happy Patel: Khatarnak Jasoos,\" directed by comedian Vir Das and produced by Aamir Khan, premiered in theatres today, January 16, 2026.",
-      "sentiment": "Neutral",
-      "tone": "Informative",
-      "confidence_score": 1.0
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text, providing a neutral sentiment and informative tone. There are no hallucinations or wrong sentiment labels."
-    }
-  },
-  {
-    "article": {
-      "title": "The Paradox of the Incarnate and the Transcendental Horizon: A Theological Cartography of Henri de Lubac and Karl Rahner in the Context of the Indian Church (1947–2026)",
-      "source": "Indiancatholicmatters.org",
-      "published_at": "2026-01-16T10:18:20Z",
-      "url": "https://www.indiancatholicmatters.org/the-paradox-of-the-incarnate-and-the-transcendental-horizon-a-theological-cartography-of-henri-de-lubac-and-karl-rahner-in-the-context-of-the-indian-church-1947-2026/",
-      "text": "The Jesuit Bifurcation and the Crisis of Modernity\r\nThe intellectual history of twentieth-century Roman Catholicism is, in many respects, a tale of two Jesuits. Henri de Lubac and Karl Rahner, both t… [+30520 chars]"
-    },
-    "analysis": {
-      "gist": "The article delves into the intellectual history of 20th-century Roman Catholicism, examining it through the contrasting perspectives of two Jesuits, Henri de Lubac and Karl Rahner, framed as a \"Jesuit Bifurcation\" addressing the \"Crisis of Modernity.\"",
-      "sentiment": "Negative",
-      "tone": "Analytical",
-      "confidence_score": 0.9
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text, as it correctly identifies the main subjects (Henri de Lubac and Karl Rahner, the Jesuit Bifurcation, and the Crisis of Modernity) and the general theme (intellectual history of 20th-century Roman Catholicism). The sentiment is not explicitly stated in the article, but the analysis does not label it as negative without evidence from the text."
-    }
-  },
-  {
-    "article": {
-      "title": "Do multi-dimensional quotas improve social equality? Intersectional representation & group relations",
-      "source": "Lse.ac.uk",
-      "published_at": "2026-01-16T10:00:01Z",
-      "url": "https://eprints.lse.ac.uk/131008/",
-      "text": "Brule, Rachel and Toth, AlizORCID: 0000-0002-1779-1553 \r\n(2025)\r\nDo multi-dimensional quotas improve social equality? Intersectional representation &amp; group relations.\r\nJournal of Politics, 89 (2)… [+1311 chars]"
-    },
-    "analysis": {
-      "gist": "This is a forthcoming academic research paper investigating whether multi-dimensional quotas improve social equality by examining intersectional representation and group relations.",
-      "sentiment": "Neutral",
-      "tone": "Analytical",
-      "confidence_score": 1.0
-    },
-    "validation": {
-      "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text, as it correctly identifies the topic of the research paper, the sentiment as neutral, and the tone as analytical. There are no hallucinations or wrong sentiment labels in the provided analysis."
-    }
-  },
-  {
-    "article": {
-      "title": "BMC Election Results: 'Maharashtra has given a befitting reply,' BJP MP Sudhanshu Trivedi hails BJP's emerging victory",
-      "source": "The Times of India",
-      "published_at": "2026-01-16T09:32:06Z",
-      "url": "https://economictimes.indiatimes.com/news/politics-and-nation/bmc-election-results-maharashtra-has-given-a-befitting-reply-bjp-mp-sudhanshu-trivedi-hails-bjps-emerging-victory/articleshow/126562808.cms",
-      "text": "New Delhi: At the Bharatiya Janata Party (BJP) press conference on Friday, BJP MP Sudhanshu Trivedi lauded the performance of the party and its allies in the Brihanmumbai Municipal Corporation (BMC) … [+3963 chars]"
-    },
-    "analysis": {
-      "gist": "At a recent press conference, BJP MP Sudhanshu Trivedi praised the performance of the BJP and its allies in the Brihanmumbai Municipal Corporation (BMC).",
-      "sentiment": "Positive",
-      "tone": "Reporting",
       "confidence_score": 0.95
     },
     "validation": {
       "is_valid": true,
-      "reasoning": "The analysis accurately reflects the sentiment (positive) and the main points of the article text, which is that BJP MP Sudhanshu Trivedi praised the performance of the BJP and its allies in the Brihanmumbai Municipal Corporation (BMC)."
+      "reasoning": "The analysis accurately reflects the positive sentiment and the main idea of the article text, which is that Jio Platforms is poised for an IPO following significant growth in sales, profits, and customer numbers. The tone is also analytical as it provides a factual summary of the situation."
     }
   },
   {
     "article": {
-      "title": "Why American workers are entering 2026 prepared to survive, not to surge ahead",
-      "source": "The Times of India",
-      "published_at": "2026-01-16T09:27:55Z",
-      "url": "https://timesofindia.indiatimes.com/education/careers/news/why-american-workers-are-entering-2026-prepared-to-survive-not-to-surge-ahead/articleshow/126562563.cms",
-      "text": "Follow Us On Social Media\r\nWhere Sea Has Stolen Palaces, Livelihoods &amp; Memories On The East Coast | I WitnessAs Iran Burns, India Flags Risk To 9,000 Indians, MEA Sets Record Straight On Chabahar… [+3110 chars]"
+      "title": "India antitrust watchdog grows impatient over Apple’s efforts to delay investigation",
+      "source": "Freerepublic.com",
+      "published_at": "2026-01-16T13:50:07Z",
+      "url": "https://freerepublic.com/focus/f-news/4362419/posts",
+      "text": "Skip to comments.\r\nIndia antitrust watchdog grows impatient over Apples efforts to delay investigation9to5Mac ^\r\n | January 15, 2026\r\n | Marcus Mendes \r\nPosted on 01/16/2026 5:50:07 AM PST by House A… [+1981 chars]"
     },
     "analysis": {
-      "gist": "The article highlights the devastating impact of sea erosion on the East Coast, causing loss of palaces, livelihoods, and memories, while also addressing India's concerns for 9,000 citizens in Iran amidst ongoing unrest, clarifying details regarding Chabahar.",
+      "gist": "The Indian antitrust watchdog is reportedly growing impatient with Apple's ongoing attempts to delay an investigation. This suggests a deepening regulatory scrutiny and potential conflict.",
       "sentiment": "Negative",
-      "tone": "Concerned",
-      "confidence_score": 0.4
+      "tone": "Informative",
+      "confidence_score": 0.95
     },
     "validation": {
       "is_valid": true,
-      "reasoning": "The analysis accurately reflects the negative sentiment and the main topics of the article, which are sea erosion causing loss and the concern for Indians in Iran. However, the tone is more accurately described as 'concerned' rather than 'alarmed' or 'distressed', and the confidence score seems low, which suggests that the analysis may not be very certain about its assessment."
+      "reasoning": "The analysis accurately reflects the sentiment of the article text, which is negative, as it mentions the Indian antitrust watchdog growing impatient with Apple's attempts to delay an investigation, suggesting a potential conflict. The tone is informative as it provides factual information."
     }
   },
   {
     "article": {
-      "title": "‘Jailer 2’: Vijay Sethupathi Breaks His No-Cameo Rule for Rajinikanth’s Upcoming Action Drama, Says He Loves Him (Watch Video)",
-      "source": "LatestLY",
-      "published_at": "2026-01-16T08:24:45Z",
-      "url": "https://www.latestly.com/entertainment/south/jailer-2-vijay-sethupathi-breaks-his-no-cameo-rule-for-rajinikanths-upcoming-action-drama-says-he-loves-him-watch-video-7277674.html",
-      "text": "One of India's most loved actors Vijay Sethupathi has now disclosed that he agreed to do a cameo in director Nelson Dilipkumar's Jailer 2 because he loved Superstar Rajinikanth. In an interview to a … [+2903 chars]"
+      "title": "LTIMindtree bags $330 million contract from central tax department to upgrade tax analytics platform with AI",
+      "source": "Livemint",
+      "published_at": "2026-01-16T09:07:19Z",
+      "url": "https://www.livemint.com/companies/ltimindtree-330-million-contract-central-tax-department-cbdt-ai-tax-analytics-platform-11768549748207.html",
+      "text": "LTIMindtree Ltd won a contract valued at 3,000 crore ($332 million) from the Central Board of Direct Taxes (CBDT), making it the third-largest order for the IT services company in the past 12 months.… [+3052 chars]"
     },
     "analysis": {
-      "gist": "Actor Vijay Sethupathi revealed he agreed to a cameo role in director Nelson Dilipkumar's 'Jailer 2' primarily out of admiration for Superstar Rajinikanth.",
+      "gist": "LTIMindtree Ltd secured a 3,000 crore ($332 million) contract from the Central Board of Direct Taxes (CBDT), marking its third-largest order in the past year.",
+      "sentiment": "Positive",
+      "tone": "Informative",
+      "confidence_score": 0.95
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text, as it correctly identifies that LTIMindtree Ltd secured a large contract, the value of the contract, the organization it was secured from, and the significance of the contract in terms of being the third-largest in the past year. The sentiment is positive, as it is a success story for the company, and the tone is informative, as it provides factual information."
+    }
+  },
+  {
+    "article": {
+      "title": "Anthropic taps former Microsoft India MD to lead Bengaluru expansion | TechCrunch",
+      "source": "TechCrunch",
+      "published_at": "2026-01-16T07:30:55Z",
+      "url": "https://techcrunch.com/2026/01/15/anthropic-taps-former-microsoft-india-md-to-lead-bengaluru-expansion/",
+      "text": "Anthropic has appointed Irina Ghose, a former Microsoft India managing director, to lead its India business as the U.S. AI startup prepares to open an office in Bengaluru. The move underscores how In… [+4458 chars]"
+    },
+    "analysis": {
+      "gist": "Anthropic, a U.S. AI startup, has appointed former Microsoft India managing director Irina Ghose to lead its India business as it prepares to open an office in Bengaluru. This move signifies the company's expansion into the Indian market.",
+      "sentiment": "Positive",
+      "tone": "Informative",
+      "confidence_score": 0.95
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text, it correctly identifies that Anthropic, a U.S. AI startup, has appointed a former Microsoft India managing director to lead its India business and is preparing to open an office in Bengaluru, which signifies the company's expansion into the Indian market. The sentiment is positive as it describes a business expansion event."
+    }
+  },
+  {
+    "article": {
+      "title": "Budget 2026: Catalysing Atmanirbhar Bharat in defence",
+      "source": "The Times of India",
+      "published_at": "2026-01-16T07:05:17Z",
+      "url": "https://economictimes.indiatimes.com/news/defence/budget-2026-catalysing-atmanirbhar-bharat-in-defence/articleshow/126559917.cms",
+      "text": "The defence sector in India can emulate the success story of the IIMs our very own premier management institutes, the first of which was established in Kolkata (then Calcutta) in 1961 and the latest … [+5408 chars]"
+    },
+    "analysis": {
+      "gist": "The article proposes that India's defense sector should emulate the successful model of the Indian Institutes of Management (IIMs) to achieve similar growth and development.",
+      "sentiment": "Positive",
+      "tone": "Suggestive",
+      "confidence_score": 1.0
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the text by stating that the article proposes that India's defense sector should emulate the successful model of the Indian Institutes of Management (IIMs), which aligns with the text. The sentiment is positive as the article suggests a strategy for improvement, and the tone is suggestive as it proposes a solution."
+    }
+  },
+  {
+    "article": {
+      "title": "OPEC regains share in India as Russian oil imports slump in December",
+      "source": "BusinessLine",
+      "published_at": "2026-01-16T06:27:32Z",
+      "url": "https://www.thehindubusinessline.com/markets/commodities/opec-regains-share-in-india-as-russian-oil-imports-slump-in-december/article70513441.ece",
+      "text": "Indias Russian oil imports fell to their lowest level in two years in December, as Western sanctions pushed refiners to tap alternatives, lifting OPECs share of imports to an 11-month high, trade dat… [+2351 chars]"
+    },
+    "analysis": {
+      "gist": "India's Russian oil imports reached a two-year low in December, driven by Western sanctions, which led Indian refiners to seek alternative suppliers and boosted OPEC's share of imports to an 11-month high.",
       "sentiment": "Neutral",
+      "tone": "Analytical",
+      "confidence_score": 0.95
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text, as it correctly summarizes the main points and the sentiment is neutral, which aligns with the informative nature of the text."
+    }
+  },
+  {
+    "article": {
+      "title": "India bonds extend losses before heavy debt supply",
+      "source": "The Times of India",
+      "published_at": "2026-01-16T05:26:30Z",
+      "url": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-extend-losses-before-heavy-debt-supply/articleshow/126558189.cms",
+      "text": "Indian government bonds slipped in early deals on Friday, with traders turning cautious ahead of a weekly debt auction and as the central bank's bond-buying has remained focused on less-traded securi… [+1578 chars]"
+    },
+    "analysis": {
+      "gist": "Indian government bonds experienced a slip in early trading on Friday as traders became cautious in anticipation of a weekly debt auction and the central bank's continued focus on less-traded securities for bond-buying.",
+      "sentiment": "Negative",
+      "tone": "Analytical",
+      "confidence_score": 0.95
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text, as it correctly identifies the slip in Indian government bonds, the reason for the slip (anticipation of a weekly debt auction and the central bank's focus on less-traded securities), and the sentiment (negative, as the bonds slipped)."
+    }
+  },
+  {
+    "article": {
+      "title": "India overhauls customs duty rules to help exporters and smaller businesses",
+      "source": "The Times of India",
+      "published_at": "2026-01-16T04:07:21Z",
+      "url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-overhauls-customs-duty-rules-to-help-exporters-and-smaller-businesses/articleshow/126556909.cms",
+      "text": "The Indian government today notified a major change in customs rules to help smaller businesses and exporters find it easier to claim duty benefits.The government has overhauled customs rules to put … [+952 chars]"
+    },
+    "analysis": {
+      "gist": "The Indian government has significantly changed customs rules, simplifying the process for smaller businesses and exporters to claim duty benefits.",
+      "sentiment": "Positive",
+      "tone": "Informative",
+      "confidence_score": 1.0
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text by stating that the Indian government has changed customs rules to help smaller businesses and exporters claim duty benefits, which aligns with the text. The sentiment is also correctly labeled as positive as the change is intended to make things easier for businesses."
+    }
+  },
+  {
+    "article": {
+      "title": "Apple and Other Manufacturers Oppose Source Code Access Proposal by India",
+      "source": "iLounge",
+      "published_at": "2026-01-15T17:54:16Z",
+      "url": "https://www.ilounge.com/news/apple-and-other-manufacturers-oppose-source-code-access-proposal-by-india",
+      "text": "Smartphone makers such as Apple are against a proposal made by the Indian Government that would have them give the source code to undergo a security review. The proposition is one of 83 standards on … [+846 chars]"
+    },
+    "analysis": {
+      "gist": "Smartphone manufacturers, including Apple, are opposing a proposal from the Indian Government that would mandate them to submit source code for security reviews. This proposal is part of 83 new standards being considered.",
+      "sentiment": "Negative",
       "tone": "Informative",
       "confidence_score": 0.9
     },
     "validation": {
       "is_valid": true,
-      "reasoning": "The analysis accurately reflects the article text, as it correctly summarizes that Vijay Sethupathi agreed to a cameo in 'Jailer 2' due to his admiration for Rajinikanth, which is the main point of the article. The sentiment is neutral as it is a factual statement."
+      "reasoning": "The analysis accurately reflects the article text, as it correctly summarizes the opposition of smartphone manufacturers to the Indian Government's proposal and the number of new standards being considered. The sentiment is negative as the manufacturers are opposing the proposal."
     }
   },
   {
     "article": {
-      "title": "Roaming Charges: What a Fool Believes",
-      "source": "CounterPunch",
-      "published_at": "2026-01-16T06:59:33Z",
-      "url": "https://www.counterpunch.org/2026/01/16/roaming-charges-126/",
-      "text": "A federal immigration officer drags Rummler across the pavement after shooting him in the face and blinding his left eye. Screengrab from video posted to X by OC Hawk.\r\nOn the throne of the world, an… [+38099 chars]"
+      "title": "Tesla’s India letdown spurs discounts on unsold Model Ys",
+      "source": "Electrek",
+      "published_at": "2026-01-15T16:31:57Z",
+      "url": "http://electrek.co/2026/01/15/teslas-india-letdown-spurs-discounts-on-unsold-model-ys/",
+      "text": "Tesla is reportedly offering discounts on unsold Model Y inventory in India as the automaker faces a “letdown” in the major auto market following its official launch last year.\r\nWe have been covering… [+2641 chars]"
     },
     "analysis": {
-      "gist": "A federal immigration officer shot Rummler in the face, blinding his left eye, and subsequently dragged him across the pavement, as depicted in a video posted to X.",
+      "gist": "Tesla is reportedly offering discounts on unsold Model Y inventory in India, facing a 'letdown' in the major auto market after its official launch last year.",
       "sentiment": "Negative",
-      "tone": "Descriptive",
-      "confidence_score": 1.0
+      "tone": "Informative",
+      "confidence_score": 0.95
     },
     "validation": {
       "is_valid": true,
-      "reasoning": "The analysis accurately reflects the violent and negative events described in the article text."
+      "reasoning": "The analysis accurately reflects the sentiment (Negative) and gist of the article text, which discusses Tesla offering discounts due to a 'letdown' in the major auto market. The tone is informative as it presents factual information."
+    }
+  },
+  {
+    "article": {
+      "title": "Zubeen Garg death case: Family seeks high-level oversight as Singapore Coroner hearings begin",
+      "source": "Syllad.com",
+      "published_at": "2026-01-15T14:25:37Z",
+      "url": "https://www.syllad.com/zubeen-garg-death-case-family-seeks-high-level-oversight-as-singapore-coroner-hearings-begin/",
+      "text": "Syllad | The Rising MeghalayaJanuary 15, 2026\r\nAs proceedings begin before the Singapore Coroners Court, the family of Assams cultural icon Zubeen Garg has made an emotional and detailed public appea… [+4620 chars]"
+    },
+    "analysis": {
+      "gist": "Proceedings have begun before the Singapore Coroners Court, where the family of Assam's cultural icon Zubeen Garg has made an emotional and detailed public appeal.",
+      "sentiment": "Neutral",
+      "tone": "Informative",
+      "confidence_score": 0.4
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text, as it correctly summarizes the proceedings at the Singapore Coroners Court and the public appeal made by Zubeen Garg's family. The sentiment is neutral as it does not express any positive or negative emotions."
+    }
+  },
+  {
+    "article": {
+      "title": "India issues final warning to Apple in long-running App Store antitrust probe",
+      "source": "Macdailynews.com",
+      "published_at": "2026-01-15T14:18:05Z",
+      "url": "https://macdailynews.com/2026/01/15/india-issues-final-warning-to-apple-in-long-running-app-store-antitrust-probe/",
+      "text": "India’s Competition Commission (CCI) has delivered a final warning to Apple, stating it will advance its antitrust investigation against the U.S. tech giant without further delay. A confidential orde… [+3103 chars]"
+    },
+    "analysis": {
+      "gist": "India's Competition Commission has delivered a final warning to Apple, confirming it will advance its antitrust investigation against the U.S. tech giant without further delay.",
+      "sentiment": "Negative",
+      "tone": "Analytical",
+      "confidence_score": 0.95
+    },
+    "validation": {
+      "is_valid": true,
+      "reasoning": "The analysis accurately reflects the article text by stating that India's Competition Commission has delivered a final warning to Apple, confirming it will advance its antitrust investigation against the U.S. tech giant without further delay. The sentiment is negative as it involves a warning or investigation."
     }
   }
 ]
