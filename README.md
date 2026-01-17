@@ -24,7 +24,7 @@ OPENROUTER_API_KEY=your_openrouter_key_here
 ```bash
 python main.py
 ```
-*   **Input:** Fetches current "India Politics" news.
+*   **Input:**Fetches current **"Indian Government"** news to ensure high relevance.
 *   **Output:** Generates a human-readable report in `output/final_report.md` and raw data in `output/analysis_results.json`.
 
 ### 4. Run Tests
