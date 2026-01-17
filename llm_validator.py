@@ -1,8 +1,10 @@
 import os
 import json
 import requests
-from pydantic import ValidationError
-from pydantic import BaseModel, Field
+from pydantic import ValidationError, BaseModel, Field
+
+# --- Configuration ---
+DEFAULT_MODEL_NAME = "mistralai/mistral-7b-instruct"
 
 class ValidationResult(BaseModel):
     """
@@ -45,6 +47,9 @@ def validate_analysis(original_text: str, analysis: dict) -> ValidationResult | 
         "Content-Type": "application/json"
     }
 
+    # Soft-code: Allow env var override
+    model_name = os.getenv("VALIDATOR_MODEL", DEFAULT_MODEL_NAME)
+
     prompt = f"""
     Task: Validate if the following analysis accurately reflects the article text.
     
@@ -61,7 +66,7 @@ def validate_analysis(original_text: str, analysis: dict) -> ValidationResult | 
     """
 
     payload = {
-        "model": "mistralai/mistral-7b-instruct",
+        "model": model_name,
         "messages": [
             {"role": "user", "content": prompt}
         ],

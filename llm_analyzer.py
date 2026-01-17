@@ -3,6 +3,8 @@ import json
 from typing import Optional, Literal
 import google.generativeai as genai
 from pydantic import BaseModel, Field, ValidationError
+DEFAULT_MODEL_NAME = "gemini-2.5-flash"
+
 
 # --- Pydantic Model (Unchanged) ---
 class NewsAnalysis(BaseModel):
@@ -26,8 +28,11 @@ def _get_model():
             raise ValueError("GEMINI_API_KEY missing from environment.")
         
         genai.configure(api_key=api_key)
-        # Use a specific version if possible, but 'gemini-pro' is the standard alias
-        _MODEL = genai.GenerativeModel('gemini-2.5-flash')
+        
+        # Soft-code: Allow env var override, default to flash
+        model_name = os.getenv("GEMINI_MODEL", DEFAULT_MODEL_NAME)
+        _MODEL = genai.GenerativeModel(model_name)
+        
     return _MODEL
 
 def analyze_article(text: str) -> Optional[NewsAnalysis]:
