@@ -54,7 +54,6 @@ The pipeline follows a linear, defensive architecture to ensure data integrity a
 ### Phase 1: The Fetcher (Defensive Engineering)
 **Strategy:** Instead of asking for "a script to fetch news," I built it function-by-function to ensure resilience.
 
-Here is the Markdown block for **Task 1**, ready to be appended to your file under **Phase 1**:
 
 #### Task 1: The Network Layer
 **AI Prompt:** 
