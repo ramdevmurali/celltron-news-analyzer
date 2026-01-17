@@ -90,27 +90,25 @@ Celltron Philosophy Active.
 ```python
 def _normalize_article(article: Dict) -> Optional[Dict]:
     title = article.get("title")
-    # Filter: Garbage or Removed content (NewsAPI artifacts)
     if not title or title.strip() == "[Removed]":
         return None
 
-    # Text Strategy: Prefer content, fallback to description
     raw_content = article.get("content")
     raw_desc = article.get("description")
     text_payload = raw_content if (raw_content and raw_content.strip()) else raw_desc
 
-    # Validation: If we still have no text, the article is useless for analysis
     if not text_payload or not text_payload.strip():
         return None
 
     return {
         "title": title.strip(),
         "source": article.get("source", {}).get("name", "Unknown"),
-        "published_at": article.get("publishedAt"), # Mapping camelCase from NewsAPI
+        "published_at": article.get("publishedAt"), # Corrected camelCase fix
         "url": article.get("url"),
         "text": text_payload.strip()
     }
-```
+ ```
+    
 
 **My Review Check:**
 1. **Ownership of Data Mapping:** The AI initially suggested `article.get("published_at")`. I audited the NewsAPI JSON response and caught that the field is actually `publishedAt` (camelCase). I manually corrected this to ensure the pipeline didn't return `None` for dates.
@@ -217,13 +215,32 @@ headers = {
     "X-Title": "Celltron News Analysis Pipeline",
 }
 
-# ...
+def validate_analysis(original_text: str, analysis: dict) -> ValidationResult | None:
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if not api_key: return None
+    
+    truncated_text = original_text[:1000] + "..." if len(original_text) > 1000 else original_text
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "HTTP-Referer": "https://github.com/ramdevmurali/celltron-news-analyzer", 
+        "X-Title": "Celltron News Analysis Pipeline",
+        "Content-Type": "application/json"
+    }
 
-payload = {
-    # Refactor: Allow model override for cost/performance tuning
-    "model": os.getenv("VALIDATOR_MODEL", "mistralai/mistral-7b-instruct"),
-    "messages": [{"role": "user", "content": prompt}]
-}
+    model_name = os.getenv("VALIDATOR_MODEL", DEFAULT_MODEL_NAME)
+    payload = {
+        "model": model_name,
+        "messages": [{"role": "user", "content": f"Validate this analysis: {analysis} against text: {truncated_text}"}],
+        "temperature": 0.1
+    }
+
+    try:
+        response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=10)
+        content = response.json()['choices'][0]['message']['content'].strip()
+        clean_content = content.replace("```json", "").replace("```", "")
+        return ValidationResult.model_validate_json(clean_content)
+    except Exception:
+        return None
 ```
 **My Review Check:**
 1. **Identity:** Added `HTTP-Referer` and `X-Title` to comply with OpenRouter's "good citizen" policy (they request this to identify apps).
@@ -261,17 +278,25 @@ During testing, the generic query "India Politics" returned noise (e.g., Bollywo
 **Final Code:**
 ```python
 def save_results(results: List[Dict]):
-    # ... logic to save raw_articles.json ...
-    # ... logic to save analysis_results.json ...
-    # ... logic to generate final_report.md ...
+    output_dir = Path("output")
+    output_dir.mkdir(exist_ok=True)
 
-if __name__ == "__main__":
-    load_dotenv()
-    # Tuning: Used nested quotes for exact phrase match
-    # Increased limit to 12 based on quality iteration results
-    final_data = run_pipeline('"Indian Government"', limit=12)
-    save_results(final_data)
-```
+    # Compliance Fix: Separate Raw Articles
+    raw_articles = [item["article"] for item in results]
+    with open(output_dir / "raw_articles.json", "w") as f:
+        json.dump(raw_articles, f, indent=2)
+
+    # Save Full Analysis
+    with open(output_dir / "analysis_results.json", "w") as f:
+        json.dump(results, f, indent=2)
+
+    # Generate Markdown Report
+    md_path = output_dir / "final_report.md"
+    # ... (Summary Stats Logic) ...
+    with open(md_path, "w") as f:
+        f.write("# News Analysis Report\n...")
+  ```
+      
 * #### Task 3: Unit Testing (Analyzer)
 **AI Prompt:**
 > "Write `tests/test_analyzer.py` using `pytest` and `unittest.mock`. 1) Mock valid JSON response. 2) Test short text guard clause (ensure no API call). 3) Test API failure handling."
