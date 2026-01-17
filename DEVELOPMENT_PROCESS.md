@@ -81,7 +81,7 @@ The pipeline follows a linear, defensive architecture to ensure data integrity a
 *   **Prompt 10 (Fetcher Tests):** "Let's add `tests/test_fetcher.py`. I want to verify the `_normalize_article` logic specifically. Provide a mock raw article with title `[Removed]` -> Assert `None`. Provide a mock where `content` is `None` but `description` is valid -> Assert fallback. Provide a valid article -> Assert expected keys."
 *   **Prompt 11 (Validator Tests):** "Finally, let's write `tests/test_validator.py`. We need to verify that our 'Dual LLM' pipeline handles OpenRouter failures gracefully. Mock `requests.post` to raise a `timeout`. Assert that `validate_analysis` returns `None` instead of crashing. Mock valid JSON response from Mistral -> Assert `ValidationResult` with correct boolean."
 
-### Phase 5: Refactoring & Quality Tuning (The "Senior" Polish)
+### Phase 5: Refactoring & Quality Tuning 
 *   **Compliance Fix:** During final review, I realized the PDF required a separate `raw_articles.json` file.
     *   *Action:* Refactored `save_results` to extract and save raw data before processing the analysis report.
 *   **Data Quality Iteration:** The initial search query "India Politics" returned irrelevant noise (e.g., generic Bollywood news or international mentions).
@@ -92,6 +92,12 @@ The pipeline follows a linear, defensive architecture to ensure data integrity a
 1.  **Pydantic vs. Raw Dicts:** I chose Pydantic because LLMs often output malformed JSON. Pydantic's `model_validate_json` provides a strict gatekeeper, ensuring the rest of the code never crashes due to missing keys.
 2.  **Over-fetching Strategy:** In `news_fetcher`, I requested `limit * 2` articles from the API. This ensures that after filtering out `[Removed]` or empty articles, the user still gets the requested number of results without needing a second API call.
 3.  **Lazy Loading:** Moving `genai.configure` to a lazy loader prevented global scope issues during testing and improved performance for batch processing.
+4.  **Synchronous vs. Asynchronous Architecture:**
+    *   **Decision:** I chose a synchronous execution model (`requests` + `time.sleep`) rather than `asyncio`/`aiohttp`.
+    *   **Reasoning:**
+        *   *Rate Limit Stability:* The free-tier APIs (Gemini/OpenRouter) have strict requests-per-minute limits. Async concurrency would require complex semaphore implementation to prevent `429 Too Many Requests` errors.
+        *   *Simplicity:* For a small batch size (12 articles), the difference in runtime is negligible, but the code complexity is significantly lower, making it more maintainable.
+        *   *Future Scaling:* For a high-throughput production system, I would refactor this to use Celery workers or an `asyncio` pipeline with token-bucket rate limiting.
 
 ## 5. Testing Strategy
 I implemented a multi-layered `pytest` suite (8 tests total) to ensure system reliability:
