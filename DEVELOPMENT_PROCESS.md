@@ -78,7 +78,7 @@ def _create_retry_session() -> requests.Session:
 1. **Resilience:** Confirmed the `backoff_factor` provides exponential sleep (1s, 2s, 4s) rather than a fixed interval.
 2. **Safety:** The AI correctly included `allowed_methods`. I verified that only idempotent methods (GET/HEAD) are retried to prevent accidental duplicate data submissions.
 3. **Correctness:** The status codes (5xx) match the requirement for catching transient server issues.
-Celltron Philosophy Active. 
+
 
 
 #### Task 2: Data Normalization
